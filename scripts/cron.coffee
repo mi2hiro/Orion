@@ -13,7 +13,7 @@ lunchMessages = [
  "おなかすいた…（・ω・。`）"
 ]
 
-regularMeetingMessage = messages[Math.floor(Math.random() * regularMeetingMessages.length)]
+regularMeetingMessage = regularMeetingMessages[Math.floor(Math.random() * regularMeetingMessages.length)]
 lunchMessage = lunchMessages[Math.floor(Math.random() * lunchMessages.length)]
 
 user = {}
