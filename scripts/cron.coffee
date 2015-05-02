@@ -1,16 +1,12 @@
 cronJob = require('cron').CronJob
 
-messages = [
-  "やふー"
-]
-
-message = messages[Math.floor(Math.random() * messages.length)]
-
-user = {}
-user.name = "mi2hirohata"
-
-envelope = user:user, room:"bot_test"
-
+module.exports = (robot) ->
+  cronTest = new cronJob('00 * * * * *', () =>
+    envelope = room: "bot_test_room"
+    robot.send envelope, "test"
+  )
+  cronTest.start()
+###
 module.exports = (robot, user) ->
 
   # 秒 分 時 日 月 曜日
@@ -30,3 +26,4 @@ module.exports = (robot, user) ->
       return
     start: true
     timeZone: "Asia/Tokyo"
+###
