@@ -23,8 +23,6 @@ nicName = [
   }
 ].toDict('name')
 
-console.log(nicName)
-
 module.exports = (robot) ->
   robot.hear /はろー/, (msg) ->
     msg.reply '遊んでないで働け!!'
