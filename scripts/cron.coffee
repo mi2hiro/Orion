@@ -9,7 +9,7 @@ message = messages[Math.floor(Math.random() * messages.length)]
 user = {}
 user.name = "mi2hirohata"
 
-envelope = user:user, room:"bot_test_room"
+envelope = user:user, room:"bot_test"
 
 module.exports = (robot, user) ->
 
@@ -31,9 +31,9 @@ module.exports = (robot, user) ->
     start: true
     timeZone: "Asia/Tokyo"
   new cronJob
-    cronTime: "30 * * * * *"
+    cronTime: "00 30 6 * * *"
     onTick: ->
-      robot.send envelope, "やふー"
+      robot.send envelope, "おはようございます"
       return
     start: true
     timeZone: "Asia/Tokyo"
