@@ -25,13 +25,6 @@ module.exports = (robot) ->
   # 秒 分 時 日 月 曜日
   # 曜日は1(日)~7(土)
   new cronJob
-    cronTime: "00 * * * * *"
-    onTick: ->
-      robot.send envelope, lunchMessage
-      return
-    start: true
-    timeZone: "Asia/Tokyo"
-  new cronJob
     # 日曜8時の定例通知
     cronTime: "00 00 20 * * 1"
     onTick: ->
