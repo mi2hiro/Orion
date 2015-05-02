@@ -1,7 +1,9 @@
 cronJob = require('cron').CronJob
 
-messages = [
-  "やふー"
+regularMeetingMessages = [
+  "定例やりますよ ヽ(´・ω・`)/",
+  "定例の時間でーす ヽ(´・ω・`)/",
+  "定例の時間をお知らせしまーす ヽ(´・ω・`)/"
 ]
 
 lunchMessages = [
@@ -11,8 +13,8 @@ lunchMessages = [
  "おなかすいた…（・ω・。`）"
 ]
 
-message = messages[Math.floor(Math.random() * messages.length)]
-lunchMessage = lunchMessages[Math.floor(Math.random() * messages.length)]
+regularMeetingMessage = messages[Math.floor(Math.random() * regularMeetingMessages.length)]
+lunchMessage = lunchMessages[Math.floor(Math.random() * lunchMessages.length)]
 
 user = {}
 user.name = "mi2hirohata"
@@ -33,14 +35,14 @@ module.exports = (robot) ->
     # 日曜8時の定例通知
     cronTime: "00 00 20 * * 1"
     onTick: ->
-      robot.send envelope, "定例やりますよ ヽ(´・ω・`)/"
+      robot.send envelope, regularMeetingMessage
       return
     start: true
     timeZone: "Asia/Tokyo"
   new cronJob
     cronTime: "00 00 13 * * *"
     onTick: ->
-      robot.send envelope, "お腹すいたね(´º﹃º｀)"
+      robot.send envelope, lunchMessage
       return
     start: true
     timeZone: "Asia/Tokyo"
