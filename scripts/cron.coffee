@@ -9,7 +9,7 @@ message = messages[Math.floor(Math.random() * messages.length)]
 user = {}
 user.name = "mi2hirohata"
 
-envelope = user:user, room:"bot_test"
+envelope = user:user, room:"random"
 
 module.exports = (robot, user) ->
 
